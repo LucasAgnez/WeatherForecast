@@ -8,6 +8,7 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       try {
+        //8f973e61
         const response = await axios.get("https://api.hgbrasil.com/weather");
       } catch (err) {
       } finally {
