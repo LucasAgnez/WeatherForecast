@@ -8,7 +8,7 @@ O projeto consiste numa página web desenvolvida em React com Javascript.
 
 A ideia é digitar um nome de uma cidade no campo de pesquisa e são mostradas informações como: temperatura atual, sensação térmica, umidade do ar, velocidade do vento e também uma previsão da temperatura para os próximos 4 dias.
 
-O projeto faz uso da APIs de <a src="https://openweathermap.org/current">Current Weather data</a> e <a src="https://openweathermap.org/forecast5">5 day weather forecast</a> todas disponibilizadas pela <a src="https://openweathermap.org/">Open Weather Organization</a>.
+O projeto faz uso da APIs de [Current weather data](https://openweathermap.org/current) e [5 day weather forecast](https://openweathermap.org/forecast5) todas disponibilizadas pela [Open Weather Organization](https://openweathermap.org/).
 
 De acordo com a descrição do clima do local, a imagem de fundo altera dinamicamente. Por exemplo, em climas com céu limpo:
 
