@@ -7,6 +7,7 @@ function App() {
 	const [location, setLocation] = useState('')  //string de pesquisa passada como parametro para request da API
 	const [data, setData] = useState({})          //objeto que guarda resposta da API
 	const [forecast, setForecast] = useState({})
+	const [error, setError] = useState()
 	// estado que controla exibição das informações
 	const [showElements, setShowElements] = useState(false)
 	// define imagem de background dinamica
@@ -22,12 +23,13 @@ function App() {
 				.get(url_weather).then(response => {
 					setData(response.data)
 					setShowElements(true)
+					setError("")
 				})
 				.catch(error => {
 					if (error.response && error.response.status === 404) {
-						alert('Localização não encontrada')
+						setError('Localização não encontrada')
 					} else {
-						alert('Erro na requisição de clima atual')
+						setError('Erro na requisição de clima atual')
 					}
 				})
 		}
@@ -40,7 +42,7 @@ function App() {
 				setForecast(response.data.list)
 			})
 			.catch(error => {
-				alert("Erro na requisição de previsão do tempo")
+				setError("Erro na requisição de previsão do tempo")
 			})
 		}
 	}
@@ -89,6 +91,7 @@ function App() {
 					placeholder="Procure por uma cidade"
 					onChange={event => setLocation(event.target.value)}
 					onKeyDown={event => search(event)} />
+					<p> {error} </p>
 			</div>
 
 			{showElements && (<WeatherContainer data={data} forecast={forecast}/>)}
